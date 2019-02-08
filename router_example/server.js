@@ -1,0 +1,10 @@
+const express=require('express')
+const server=express()
+const teacherRoute = require('./routes/teachers')
+const studentRoute = require('./routes/students')
+server.use(express.json())
+server.use(express.urlencoded({extended:true}))
+server.use('/teachers',teacherRoute)
+server.use('/students',studentRoute)
+server.listen(5555)
+
